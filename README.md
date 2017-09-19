@@ -1,4 +1,5 @@
 University Hub
+
 University Hub is an App to connect the administration and the students through a simplified webapp . The Schema currently includes three different sections including the announcements section , the general discussion section and the semester forum .
 The Announcements
 The Announcement section include the official announcements from the university side and only has the write permission from the university side. The announcements section have an reaction counter to note the up votes and down votes to receive a feedback from the students side.
