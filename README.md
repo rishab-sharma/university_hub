@@ -1,4 +1,6 @@
-University Hub
+# University Hub
+
+Author: Rishab Sharma - MAIT , New Delhi
 
 University Hub is an App to connect the administration and the students through a simplified webapp . The Schema currently includes three different sections including the announcements section , the general discussion section and the semester forum .
 The Announcements
@@ -9,4 +11,5 @@ The General Discussion Section Include a topic raised by any particular student 
 The Semester Forum includes all the talk about the current semester which may include syllabus discussion , exam tips from the faculty , sharing of semester notes , important papers and references and other semester linked stuff.
 Thus , University Hub unlike any other college website is a common interactive link between various universities and their students in a more simplified and sorted manner.
 You can view the prototype at : https://pr.to/AUJSZ7/
+
 Thank you and feel free to give your feedback, mail me at rishusharma.sharma7@gmail.com or visit me at www.rishabsharma.co.nf
