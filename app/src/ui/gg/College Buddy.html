@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://collegebuddy.agrarian72.hasura-app.io/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>College Buddy</title>
+    <meta name="theme-color" content="#86915c">
+    <link rel="shortcut icon" href="https://collegebuddy.agrarian72.hasura-app.io/ui/images/icon.gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./College Buddy_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./College Buddy_files/semantic.min.css">
+    <script src="./College Buddy_files/jquery.min.js"></script>
+    <script src="./College Buddy_files/semantic.min.js"></script>
+    <!-- Link info tags -->
+    <meta property="og:url" content="https://collegebuddy.agrarian72.hasura-app.io">
+    <meta property="og:description" content="Event sharing webapp">
+    <meta property="og:title" content="College Buddy">
+    <meta property="og:image" content="/ui/images/collegeBuddy.png">
+    <style>
+      body{
+        background-color:rgba(140, 69, 69, 0.02);
+      }
+      #auth-menu{
+        max-width: 150px;
+        margin: 0 auto;
+        margin-top: 15px;
+      }
+      #tab{
+        max-width: 300px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui container">
+      <div id="auth_logo" style="max-width: 300px; margin: 0 auto;">
+        <img src="./College Buddy_files/auth_logo.png" style="max-width: 300px; margin: 0 auto;">
+      </div>
+      <!-- Tabs -->
+      <div class="ui secondary menu" id="auth-menu">
+        <a class="item active" data-tab="login">Login</a>
+        <a class="item" data-tab="signup">Sign up</a>
+      </div>
+      <div id="tab">
+        <div class="ui active tab segment" data-tab="login">
+          <div id="login-form">
+            <div class="ui red tiny message" id="login-message" style="display: none;"></div>
+            <script>$('#login-message').hide();</script>
+            <div class="ui fluid left icon input">
+              <input type="text" id="username" placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+            <br>
+            <div class="ui fluid left icon input">
+              <input type="password" id="password" placeholder="Password">
+              <i class="sign in icon"></i>
+            </div>
+            <div class="ui divider"></div>
+            <button id="login" class="ui teal fluid button">Login</button>
+          </div>
+        </div>
+        <div class="ui tab segment" data-tab="signup">
+          <div id="signup-form">
+            <div class="ui red tiny message" id="signup-message" style="display: none;"></div>
+            <script>$('#signup-message').hide();</script>
+            <div class="ui fluid left icon input">
+              <input type="text" id="name" placeholder="Name">
+              <i class="font icon"></i>
+            </div>
+            <br>
+            <div class="ui fluid left icon input" id="username-check">
+              <input type="text" id="signup-username" placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+            <br>
+            <div class="ui fluid left icon input">
+              <input type="password" id="signup-password" placeholder="Password">
+              <i class="sign in icon"></i>
+            </div>
+            <br>
+            <div class="ui fluid left icon input">
+              <input type="text" id="college" placeholder="College">
+              <i class="marker icon"></i>
+            </div>
+            <div class="ui divider"></div>
+            <button id="signup" class="ui teal fluid button">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- container closing div -->
+    <script>
+
+      // To display error message
+      function messageAlert(selector,text,color) {
+        var colors=['green','red'];
+        var selector='#'+selector;
+        $(selector).html(text);
+        $(selector).removeClass(colors[(color+1)%2]);
+        $(selector).addClass(colors[color]);
+        $(selector).show();
+      }
+
+      //Login function
+      $('#login').click(function(){
+        var username=$('#username').val().trim();
+        var password=$('#password').val();
+        if(username.length==0){
+          messageAlert('login-message','Username cannot be empty',1);
+          return;
+        }
+        if(password.length==0){
+          messageAlert('login-message','Password cannot be empty',1);
+          return;
+        }
+        $('#login').addClass('loading');
+        $.ajax({
+        	method: "POST",
+        	url: "https://auth.agrarian72.hasura-app.io/login",
+        	xhrFields: {
+        		withCredentials: true
+        	},
+        	data: JSON.stringify({
+            "username":username,
+            "password":password
+          }),
+        	contentType: "application/json"
+        }).done(function (data) {
+          //console.log(data);
+          window.location.replace('/');
+        }).fail(function (xhr) {
+          var res=JSON.parse(xhr.responseText);
+          messageAlert('login-message',res.message,1);
+          $('#login').removeClass('loading');
+        });
+      });
+
+      //Username checking function
+      $("#signup-username").keyup(function(){
+        var username=$('#signup-username').val().trim();
+        if(username.length==0)
+          $('#signup-message').hide();
+        else{
+          $('#username-check').addClass('loading');
+          $.ajax({
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+              "type":"select",
+              "args":{
+                "table":"user_info",
+                "columns":["*"],
+                "where":{
+                  "username" :{
+                    "$like":username
+                  }
+                }
+              }
+            }),
+            url: "https://data.agrarian72.hasura-app.io/v1/query"
+          }).done(function(res){
+            var current_username=$('#signup-username').val().trim();
+            if(current_username.length==0)
+              $('#signup-message').hide();
+            else
+              if (res.length==0)
+                messageAlert('signup-message',"Username available",0);
+              else
+                messageAlert('signup-message',"Username already in use",1);
+            $('#username-check').removeClass('loading');
+          }).fail(function(xhr){
+            var res=JSON.parse(xhr.responseText);
+            messageAlert('signup-message',res.message,1);
+            $('#username-check').removeClass('loading');
+          });
+        }
+      });
+
+      //Signup function
+      $('#signup').click(function () {
+        var college=$('#college').val().trim();
+        var name=$('#name').val().trim();
+        var username=$('#signup-username').val().trim();
+        var password=$('#signup-password').val();
+        if(name.length==0){
+          messageAlert('signup-message','Name cannot be empty',1);
+          return;
+        }
+        if(username.length==0){
+          messageAlert('signup-message','Username cannot be empty',1);
+          return;
+        }
+        if(password.length==0){
+          messageAlert('signup-message','Password cannot be empty',1);
+          return;
+        }
+        if(college.length==0){
+          messageAlert('signup-message','College cannot be empty',1);
+          return;
+        }
+        $('#signup').addClass('loading');
+        $.ajax({
+        	method: "POST",
+        	url: "https://auth.agrarian72.hasura-app.io/signup",
+        	xhrFields: {
+        		withCredentials: true
+        	},
+        	data: JSON.stringify({
+              "username":username,
+              "password":password
+          }),
+        	contentType: "application/json"
+        }).done(function (data) {
+          console.log(data);
+          //var res=JSON.parse(data);
+          var hasura_id=data.hasura_id;
+          $.ajax({
+          	method: "POST",
+          	url: "https://data.agrarian72.hasura-app.io/v1/query",
+          	xhrFields: {
+          		withCredentials: true
+          	},
+          	data: JSON.stringify({
+              "type":"insert",
+              "args":{
+                "table":"user_info",
+                "objects":[
+                  {
+                    "id":hasura_id,
+                    "name":name,
+                    "username":username,
+                    "college_name":college
+                  }
+                ]
+              }
+            }),
+            contentType: "application/json"
+          }).done(function(res){
+            window.location.replace('/');
+          }).fail(function(xhr){
+            var res=JSON.parse(xhr.responseText);
+            messageAlert('signup-message',res.message,1);
+            $('#signup').removeClass('loading');
+          })
+        }).fail(function (xhr) {
+          var res=JSON.parse(xhr.responseText);
+          messageAlert('signup-message',res.message,1);
+          $('#signup').removeClass('loading');
+        });
+      });
+      $('.menu .item').tab({context: 'parent'});
+
+    </script>
+  
+
+</body></html>

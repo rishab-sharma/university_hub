@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://collegebuddy.agrarian72.hasura-app.io/event?event_id=43 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Event | College Buddy</title>
+    <meta name="theme-color" content="#86915c">
+    <link rel="shortcut icon" href="https://collegebuddy.agrarian72.hasura-app.io/ui/images/icon.gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Event _ College Buddy_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./Event _ College Buddy_files/semantic.min.css">
+    <script src="./Event _ College Buddy_files/jquery.min.js"></script>
+    <script src="./Event _ College Buddy_files/semantic.min.js"></script>
+    <style>
+      #event-specific{
+        max-width: 650px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+      .ui.comments{
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Sidebar menu options -->
+    <div class="ui sidebar menu vertical labeled icon">
+      <img src="./Event _ College Buddy_files/logo.png" id="logo">
+      <a href="https://collegebuddy.agrarian72.hasura-app.io/event?event_id=43#" class="item" id="menu-user-info">
+      <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Profile
+        </div>
+        <div class="content">
+          <div class="ui list">
+          <div class="item">
+            <div class="header">Username</div>
+            r
+          </div>
+          <div class="ui divider"></div>
+          <div class="item">
+            <div class="header">Name</div>
+            r
+          </div>
+          <div class="ui divider"></div>
+          <div class="item">
+            <div class="header">College</div>
+            1
+          </div>
+          </div>
+        </div>
+      </div>
+    
+        <i class="user icon"></i>
+        <span id="user">r</span>
+      </a>
+      <a href="https://collegebuddy.agrarian72.hasura-app.io/" class="item">
+        <i class="home icon"></i>
+        Home
+      </a>
+      <a href="https://collegebuddy.agrarian72.hasura-app.io/post" class="item">
+        <i class="write icon"></i>
+        Post
+      </a>
+      <a href="https://collegebuddy.agrarian72.hasura-app.io/event?event_id=43#" class="item" id="logout">
+        <i class="sign out icon"></i>
+        Logout
+      </a>
+    </div>
+
+    <!-- Pusher contents -->
+    <div class="ui pusher">
+
+      <!-- Menu button top attached -->
+      <div class="ui top attached demo menu">
+        <a class="item" id="menu-button">
+          <i class="sidebar icon"></i>
+          Menu
+        </a>
+        <a href="https://collegebuddy.agrarian72.hasura-app.io/">
+          <img src="./Event _ College Buddy_files/logo.png" id="logo">
+        </a>
+      </div>
+
+      <!-- Container inside pusher -->
+      <div class="ui container">
+        <!-- Event information -->
+        <div class="ui styled fluid accordion" id="event-specific">
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            Event name
+          </div>
+          <div class="active content">
+            <i class="quote right icon"></i>
+            <span id="event-title">Haptic Robotic Arm Workshop</span>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Date
+          </div>
+          <div class="content">
+            <i class="calendar icon"></i>
+            <span id="event-date">Tue Aug 22 2017</span>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Time
+          </div>
+          <div class="content">
+            <i class="time icon"></i>
+            <span id="event-time">09:00</span>
+          </div>
+	        <div class="title">
+            <i class="dropdown icon"></i>
+            College
+          </div>
+          <div class="content">
+            <i class="marker icon"></i>
+	          <span id="event-college">GEC Thrissur</span>
+          </div>
+          <div id="registration-link">
+            <div class="title">
+              <i class="dropdown icon"></i>
+              Registration Link
+            </div>
+            <div class="content">
+              <a href="https://goo.gl/forms/CiJHaVp7PkJMvmpt1" id="event-link">Click here </a> for registration
+            </div>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Description
+          </div>
+          <div class="content">
+            <i class="write icon"></i>
+            <span id="event-description">As we enter an age where robotic technology is flourishing rapidly, there are still widespread concerns on the consequences of automation of robots and their integration into our society. However, the use of robots have proved invaluable in innumerable fields, like the handling of hazardous materials and robotic surgery. Haptics play a vital role in such circumstances. <br>Haptic technology, or haptics, is a tactile feedback technology which takes advantage of the sense of touch by applying forces , vibrations or motions to the user. It is infact a wonderful technology where touch sensation and human machine interaction can be used to control the robots. Participants will learn in depth about Haptic technology with the help of a gesture controlled robotic arm. <br>Dates of the workshop: August 22,23</span>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Rating
+          </div>
+          <div class="content" id="event-rating">
+            <h3 id="total-rating">Rating: 3.7/5</h3>
+            <b id="rate-header">Your rating: </b>
+            <div class="ui star rating disabled" data-max-rating="5"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Total views
+          </div>
+          <div class="content">
+            <h3 class="ui header" id="event-views">58</h3>
+          </div>
+        </div>
+        <!-- Beginning of comment section -->
+        <div class="ui comments">
+          <button class="ui button positive fluid basic" id="share-btn-display" style="display: none;">
+            <a href="whatsapp://send?text=Details of event &quot; *_Haptic Robotic Arm Workshop_* &quot;: As we enter an age where robotic technology is flourishing rapidly, there are still widespread concerns on the consequences of automation of robots and their integration into our society. However, the use of robots have proved invaluable in innumerable fields, like the handling of hazardous materials and robotic surgery. Haptics play a vital role in such circumstances.  Haptic technology, or haptics, is a tactile feedback technology which takes advantage of the sense of touch by applying forces , vibrations or motions to the user. It is infact a wonderful technology where touch sensation and human machine interaction can be used to control the robots. Participants will learn in depth about Haptic technology with the help of a gesture controlled robotic arm.  Dates of the workshop: August 22,23. Visit https://collegebuddy.agrarian72.hasura-app.io/auth for details of more events" id="share-btn" style="color: #000000;">Share this event in WhatsApp  </a>
+            <i class="whatsapp icon"></i>
+          </button>
+          <script>
+          if($(window).width()<900){
+            $('#share-btn-display').show();
+          }
+          else{
+            $('#share-btn-display').hide();
+          }
+          </script>
+          <h3 class="ui dividing header">Comments</h3>
+          <!-- comment one -->
+          <div id="comments">
+
+          <div class="comment">
+                            <div class="content">
+                              <a class="author">r</a>
+                              <div class="metadata">
+                                <span class="date">2017-8-3 11:39:21</span>
+                              </div>
+                              <div class="text">don</div>
+                            </div>
+                          </div>
+                          <div class="ui divider"></div><div class="comment">
+                            <div class="content">
+                              <a class="author">r</a>
+                              <div class="metadata">
+                                <span class="date">2017-8-3 07:46:15</span>
+                              </div>
+                              <div class="text">cool</div>
+                            </div>
+                          </div>
+                          <div class="ui divider"></div></div>
+          <!-- comment box -->
+          <form class="ui reply form">
+            <div class="ui red tiny message" id="comment-message" style="display: none;"></div>
+            <script>$('#comment-message').hide();</script>
+            <div class="field">
+              <textarea style="height:20px;" placeholder="Add your comment here..." id="comment"></textarea>
+            </div>
+            <div class="ui blue labeled submit icon button" id="comment-btn">
+              <i class="icon edit"></i> Add Comment
+            </div>
+          </form>
+        </div>  <!-- comment section closing div -->
+      </div>  <!-- container closing div -->
+    </div>  <!-- pusher closing div-->
+    <script src="./Event _ College Buddy_files/script.js"></script>
+    <script>
+      $('#comment-message').hide();
+      $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+      }
+      var id=parseInt($.urlParam('event_id'));
+      var event_rating;
+      var total_rating;
+      $.ajax({
+        method:"POST",
+        url:"https://data.agrarian72.hasura-app.io/v1/query",
+        data: JSON.stringify({
+          "type":"select",
+          "args":{
+            "table":"event_details",
+            "columns":["*"],
+            "where":{
+              "id":{
+                "$eq":id
+              }
+            }
+          }
+        }),
+        xhrFields: {
+          withCredentials: true
+        },
+        contentType:"application/json"
+      }).done(function(res){
+        if(res.length==0)
+            document.write("No event with event id "+id);
+        else{
+          var link=res[0].reg_link;
+          if(link===null)
+            $('#registration-link').hide();
+          else
+            $('#event-link').attr('href',link);
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          var date=new Date(res[0].date);
+          var time=res[0].time.substring(0,5);
+          var views=res[0].views+1;
+          var title=res[0].title;
+          var description=res[0].description;
+          event_rating=res[0].rating;
+          total_rating=res[0].total_rating;
+          if(event_rating === null)
+            $('#total-rating').html("This event is not rated by anyone yet.");
+          else
+            $('#total-rating').html("Rating: "+event_rating.toFixed(1)+'/5');
+          $('#event-title').html(title);
+          $('#event-date').html(date.toDateString());
+          $('#event-time').html(time);
+          $('#event-description').html(description);
+          $('#event-views').html(views);
+          $('#event-college').html(res[0].college_name);
+          description=description.split('<br>');
+          description=description.join(' ');
+          var share='whatsapp://send?text='+'Details of event " *_'+title+'_* ": '+description+'. Visit https://collegebuddy.agrarian72.hasura-app.io/auth for details of more events';
+          $('#share-btn').attr('href',share);
+          $.ajax({
+            method: "POST",
+            url: "https://data.agrarian72.hasura-app.io/v1/query",
+            xhrFields: {
+              withCredentials: true
+            },
+            data: JSON.stringify({
+              "type":"update",
+              "args":{
+                "table":"event",
+                "$set":{
+                  "views":views
+                },
+                "where":{
+                  "id":{
+                    "$eq":id
+                  }
+                }
+              }
+            }),
+            contentType:"application/json"
+          }).done(function(res){
+            console.log("View count increemented");
+          }).fail(function(xhr){
+            alert("Something went wrong");
+          })
+        }
+      }).fail(function(xhr){
+        document.write("Error fetching data!");
+      });
+      // Rating jQuery
+      $('.ui.rating').rating();
+      // accordion
+      $('.ui.accordion').accordion();
+
+      $(".ui.rating").one("click",function(){
+        var rating=$('.ui.rating').rating("get rating");
+        $.ajax({
+          method: "POST",
+          url: "https://data.agrarian72.hasura-app.io/v1/query",
+          data: JSON.stringify({
+            "type":"insert",
+            "args":{
+              "table":"event_rating",
+              "objects":[
+                {
+                  "event_id":id,
+                  "user_id":user_id,
+                  "rating":rating
+                }
+              ]
+            }
+          }),
+          contentType:"application/json",
+          xhrFields: {
+            withCredentials: true
+          }
+        }).done(function(res){
+          $('#rate-header').html("Your rating: ");
+          $(".ui.rating").rating('disable');
+          var new_rating=(event_rating*total_rating+rating)/(total_rating+1);
+          $('#total-rating').html("Rating: "+new_rating.toFixed(1)+"/5");
+        }).fail(function(xhr){
+          alert("Something went wrong. Try again later");
+        });
+      });
+
+      setTimeout(function(){
+        $.ajax({
+        method: "POST",
+        url: "https://data.agrarian72.hasura-app.io/v1/query",
+        xhrFields: {
+          withCredentials: true
+        },
+        data: JSON.stringify({
+          "type":"select",
+          "args":{
+            "table":"event_rating",
+            "columns":["*"],
+            "where":{
+              "event_id":{
+                "$eq":id
+              },
+              "user_id":{
+                "$eq":user_id
+              },
+            }
+          }
+        }),
+        contentType:"application/json"
+      }).done(function(res){
+        console.log(res[0]);
+        if(res.length!=0){
+          $(".ui.rating").rating({
+            initialRating: res[0].rating
+          });
+          $('#rate-header').html("Your rating: ");
+          $(".ui.rating").rating('disable');
+          $('.ui.rating').unbind('click');
+        }
+        else{
+          $(".ui.rating").rating({
+            initialRating: 0
+          });
+        }
+      }).fail(function(xhr){
+        $('event-rating').html("Failed to fetch your rating!");
+      })
+    },1600);
+
+    $('#comment-btn').click(function(){
+      var comment=$('#comment').val();
+      comment=comment.split('\n');
+      comment=comment.join('<br>');
+      if(comment.length==0){
+        $('#comment-message').html("Comment cannot be empty");
+        $('#comment-message').show();
+        return;
+      }
+      $('#comment').val("");
+      $('#comment-message').hide();
+      $.ajax({
+        method: "POST",
+        url: "https://data.agrarian72.hasura-app.io/v1/query",
+        xhrFields: {
+          withCredentials: true
+        },
+        data: JSON.stringify({
+          "type":"insert",
+          "args":{
+            "table":"comments",
+            "objects":[
+              {
+                "user_id":user_id,
+                "event_id":id,
+                "comment":comment
+              }
+            ],
+            "returning":["created"]
+          }
+        }),
+        contentType:"application/json"
+      }).done(function(res){
+        var date_time=new Date(res.returning[0].created);
+        date_time=date_time.toLocaleString();
+        var comment_text=`<div class="comment">
+                            <div class="content">
+                              <a class="author">${name}</a>
+                              <div class="metadata">
+                                <span class="date">${date_time}</span>
+                              </div>
+                              <div class="text">${comment}</div>
+                            </div>
+                          </div>
+                          <div class="ui divider"></div>`;
+        $('#comments').prepend(comment_text);
+      }).fail(function(xhr){
+        $('#comment-message').html("Something went wrong. Try again later!");
+        $('#comment-message').show();
+      })
+    });
+
+    $.ajax({
+      method: "POST",
+      url: "https://data.agrarian72.hasura-app.io/v1/query",
+      xhrFields: {
+        withCredentials: true
+      },
+      data: JSON.stringify({
+        "type":"select",
+        "args":{
+          "table":"comment_details",
+          "columns":["*"],
+          "where":{
+            "event_id":{
+              "$eq":id
+            }
+          },
+          "order_by":["-created"]
+        }
+      }),
+      contentType:"application/json"
+    }).done(function(res){
+      for (var i=0; i<res.length; i+=1){
+        var obj=res[i];
+        var date_time=new Date(obj.created);
+        date_time=date_time.toLocaleString();
+        var comment_text=`<div class="comment">
+                            <div class="content">
+                              <a class="author">${obj.name}</a>
+                              <div class="metadata">
+                                <span class="date">${date_time}</span>
+                              </div>
+                              <div class="text">${obj.comment}</div>
+                            </div>
+                          </div>
+                          <div class="ui divider"></div>`;
+        $('#comments').append(comment_text);
+      }
+    }).fail(function(xhr){
+      $('#comment-message').html("Error fetching comments");
+      $('#comment-message').show();
+    })
+    </script>
+  
+
+</body></html>
