@@ -21,7 +21,7 @@ Home Page
 
 University Hub Home Page two main buttons for registeration and already registered users
 
-#Registration Page
+# Registration Page
 
 It involves the user to enter the asked details in order to make a profile on the app
 
@@ -35,7 +35,7 @@ The Announcement section include the official announcements from the university 
 Thus this completes the First screen of my WebApp connected to the Backend
 Backend :
 
-Creating Custom Service and Authorized SSH Keys
+# Creating Custom Service and Authorized SSH Keys
 
 This is the “Add a Custom Service” section of the Hasura platform which lets us create new services for our project. As you can see in the picture, it is very easy to create a new service, just give a Name, Enable the Git Push and click on create button at the bottom. Wait for a minute or so and your custom service will start running. After creating the service we need to add an Authorized SSH key to it, so that not everyone can directly access it. For that we need to first generate the ssh key by executing the following command :
 ssh-keygen -t rsa
