@@ -14,7 +14,7 @@ You can view the prototype at : https://pr.to/AUJSZ7/
 
 https://www.youtube.com/watch?v=H534mh8loTY
 
-[!(https://img.youtube.com/vi/H534mh8loTY/0.jpg)](https://www.youtube.com/watch?v=H534mh8loTY)
+[![university hub](https://img.youtube.com/vi/H534mh8loTY/0.jpg)](https://www.youtube.com/watch?v=H534mh8loTY)
 
 The University Hub WebApp consists of three major screens or state.
 Home Page
