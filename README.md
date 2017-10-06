@@ -12,7 +12,7 @@ The Semester Forum includes all the talk about the current semester which may in
 Thus , University Hub unlike any other college website is a common interactive link between various universities and their students in a more simplified and sorted manner.
 You can view the prototype at : https://pr.to/AUJSZ7/
 
-https://www.youtube.com/watch?v=H534mh8loTY
+Video : https://www.youtube.com/watch?v=H534mh8loTY
 
 [![university hub](https://img.youtube.com/vi/H534mh8loTY/0.jpg)](https://www.youtube.com/watch?v=H534mh8loTY)
 
